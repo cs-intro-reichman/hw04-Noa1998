@@ -1,3 +1,5 @@
+
+import java.util.Arrays;
 public class StringOps {
     ////////////////////////////////////////////////////////////
     //////                                               ///////
@@ -22,21 +24,81 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        
+        String str = "Hello world";
+        System.out.println(Arrays.toString(allIndexOf(str,'l')));
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+        string = lowerCase(string);
+        String out = "";
+        for (int i=0; i<string.length(); i++){
+            char n = string.charAt(i);
+            if (n == 'o' ||n == 'u' ||n == 'a' || n == 'e' || n == 'i'){
+                n = (char) (n-32);
+                out += n;
+            } else {
+                out += n;
+            }
+        }
+    
+        
+        return out;
     }
 
+    public static String lowerCase(String s) {
+        int i =0; //will run from the first char ti the last
+        String out = "";
+        for(i=0; i<s.length(); i++){
+            char n = s.charAt(i);
+            if((n <= 'Z') && n >= 'A'){ // Uppercase
+            n = (char) (n+32);
+            } 
+        out += n;
+        }
+
+        return out;
+    }
+
+
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+        string = lowerCase(string);
+        String out = "";
+
+        for (int i = 0; i < string.length(); i++){
+            char n = string.charAt(i);
+            
+            if (i < string.length()-1 && n==' '){
+                char m = string.charAt(i+1);
+                m = (char) (m-32);
+                out += m;  
+                i++;
+
+                } else {
+                out += n;
+            
+        }
+    }
+        return out;
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int count = 0;
+        for (int i = 0; i < string.length(); i++){
+            char n = string.charAt(i);
+            if (chr == n){
+                count++;
+            }
+        }
+        int[] array = new int[count];
+        int arrayIndex = 0;
+        for (int i = 0; i < string.length(); i++){
+            char n = string.charAt(i);
+            if (chr == n){
+                array[arrayIndex] = i;
+                arrayIndex++;
+            }
+        }
+        return array;
+
     }
 }
