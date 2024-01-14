@@ -24,8 +24,8 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String str = "Hello world";
-        System.out.println(Arrays.toString(allIndexOf(str,'l')));
+        String str = " tWo   wordS";
+        System.out.println((camelCase(str)));
     }
 
     public static String capVowelsLowRest (String string) {
@@ -67,7 +67,7 @@ public class StringOps {
         for (int i = 0; i < string.length(); i++){
             char n = string.charAt(i);
             
-            if (i < string.length()-1 && n==' '){
+            if (i < string.length()-1 && n==' ' && i != 0){
                 char m = string.charAt(i+1);
                 m = (char) (m-32);
                 out += m;  
