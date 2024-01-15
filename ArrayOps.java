@@ -1,6 +1,7 @@
+
 public class ArrayOps {
     public static void main(String[] args) {
-      System.out.println(findMissingInt(new int[] {1,-2,3,-4,5}));  
+      System.out.println(isSorted(new int[] {1, -2, 3, 4}));  
     }
     
     public static int findMissingInt (int [] array) {
@@ -16,7 +17,7 @@ public class ArrayOps {
             return i;
             }
         }
-        return array.length + 1;
+        return array.length;
     }
     // {1, 0, 3}
     /**
@@ -24,23 +25,21 @@ public class ArrayOps {
      * @return
      */
     public static int secondMaxValue(int [] array) {
-        int FirstMax = array[0];
-        int SecondMax = array[1];
-        if (FirstMax < SecondMax){
-            FirstMax = array[1];
-            SecondMax = array[0];
-        }
-        for (int i = 2; i < array.length; i++){
-            if (array[i] > FirstMax){
-                SecondMax = FirstMax;
-                FirstMax = array[i];
-            } else if (array[i] > SecondMax && array[i] != FirstMax) {
-                SecondMax = array[i];
-            }
-        }
-                
-                
+        int FirstMax = 1;
+        int SecondMax = 0;
+        int temp = 0;
     
+        for (int i = 0; i < array.length; i++){
+            if (array[i] > SecondMax){
+                SecondMax = array[i];
+                if (SecondMax >= FirstMax){
+                    temp = FirstMax;
+                    FirstMax = SecondMax;
+                    SecondMax = temp;
+                }
+            }
+         }
+
         return SecondMax;
 }
 
@@ -71,15 +70,19 @@ public class ArrayOps {
     
 
     public static boolean isSorted(int [] array) {
-        boolean isSorted = false;
-        for (int i=0; i < array.length-1; i++){
-            if (array[i]>array[i+1]){
-                isSorted = false;
-            } else {
-                isSorted = true;
+        boolean increasing = array[0] <= array[1];
+        boolean decreasing = array[0] >= array[1];
+
+        for (int i = 1; i < array.length - 1; i++){
+            if (increasing && array[i] > array[i+1]){
+                return false;
+            }
+            if (decreasing && array[i] < array[i+1]){
+                return false;
             }
         }
-        return isSorted;
+        
+        return true;
     }
 
 }
