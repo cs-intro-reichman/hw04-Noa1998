@@ -1,9 +1,9 @@
 public class ArrayOps {
     public static void main(String[] args) {
-      System.out.println(secondMaxValue(new int[] {1,-2,3,-4,5}));  
+      System.out.println(findintMissingInt(new int[] {1,-2,3,-4,5}));  
     }
     
-    public static int findintMissingInt (int [] array) {
+    public static int findMissingInt (int [] array) {
         for (int i = 0; i < array.length; i++) {
             boolean inArray = false;
             for (int k = 0; k < array.length; k++) {
