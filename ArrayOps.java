@@ -1,6 +1,6 @@
 public class ArrayOps {
     public static void main(String[] args) {
-      System.out.println(findintMissingInt(new int[] {1,-2,3,-4,5}));  
+      System.out.println(findMissingInt(new int[] {1,-2,3,-4,5}));  
     }
     
     public static int findMissingInt (int [] array) {
