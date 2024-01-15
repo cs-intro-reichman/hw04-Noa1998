@@ -66,6 +66,9 @@ public class StringOps {
 
         for (int i = 0; i < string.length(); i++){
             char n = string.charAt(i);
+            if (n == ' ' && i == 0){
+                continue;
+            }
             
             if (i < string.length()-1 && n==' ' && i != 0){
                 char m = string.charAt(i+1);
