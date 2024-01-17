@@ -24,7 +24,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String str = "    Two wordS   ";
+        String str = "   Two wordS  ";
         System.out.println((camelCase(str)));
     }
 
@@ -60,8 +60,6 @@ public class StringOps {
     }
 
 
-  
-
     public static String deleteSpace(String string){
         int counter = 0;
         while(string.charAt(counter)==' '){
@@ -71,6 +69,29 @@ public class StringOps {
     }
 
     public static String camelCase (String string) {
+        string = lowerCase(string);
+        String out = "";
+        string = deleteSpace(string);
+        for (int i = 0; i < string.length(); i++){
+            char n = string.charAt(i);
+ 
+            if (i < string.length()-1 && n==' ' && i != 0){
+                char m = string.charAt(i+1);
+                m = (char) (m-32);
+                out += m;  
+                i++;
+
+                } else {
+                out += n;
+            
+        }
+    }
+        return out;
+    }
+
+ 
+
+    public static String camelCase1 (String string) {
         string = deleteSpace(string);
         string = lowerCase(string);
         String out = "";
