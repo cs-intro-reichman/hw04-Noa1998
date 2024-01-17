@@ -24,8 +24,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String str = " hello world";
-        System.out.println((camelCase(str)));
+System.out.println(camelCase("  test me now "));
     }
 
     public static String capVowelsLowRest (String string) {
