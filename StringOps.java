@@ -67,7 +67,7 @@ public class StringOps {
         return string.substring(counter);
     }
 
-    public static String camelCase (String string) {
+    public static String camelCase1String (String string) {
         string = lowerCase(string);
         String out = "";
         string = deleteSpace(string);
@@ -90,7 +90,7 @@ public class StringOps {
 
  
 
-    public static String camelCase1 (String string) {
+    public static String camelCase (String string) {
         string = deleteSpace(string);
         string = lowerCase(string);
         String out = "";
