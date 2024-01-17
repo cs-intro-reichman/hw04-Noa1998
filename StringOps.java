@@ -77,7 +77,7 @@ public class StringOps {
             
         }
     }
-        return out+"\n";
+        return out+" ";
     }
 
     public static String deleteSpace(String string){
