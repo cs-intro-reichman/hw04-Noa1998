@@ -59,7 +59,7 @@ System.out.println(camelCase("  test me now "));
     }
 
 
-    public static String camelCase1 (String string) {
+    public static String camelCase (String string) {
         string = lowerCase(string);
         String out = "";
         string = deleteSpace(string);
@@ -88,7 +88,7 @@ System.out.println(camelCase("  test me now "));
         return string.substring(counter);
     }
 
-    public static String camelCase (String string) {
+    public static String camelCase1 (String string) {
         string = deleteSpace(string);
         string = lowerCase(string);
         String out = "";
