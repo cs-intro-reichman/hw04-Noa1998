@@ -24,7 +24,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String str = " tWo   wordS";
+        String str = " hello world";
         System.out.println((camelCase(str)));
     }
 
@@ -60,7 +60,7 @@ public class StringOps {
     }
 
 
-    public static String camelCase (String string) {
+    public static String camelCase1 (String string) {
         string = lowerCase(string);
         String out = "";
         string = deleteSpace(string);
@@ -89,7 +89,7 @@ public class StringOps {
         return string.substring(counter);
     }
 
-    public static String camelCase1 (String string) {
+    public static String camelCase (String string) {
         string = deleteSpace(string);
         string = lowerCase(string);
         String out = "";
