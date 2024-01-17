@@ -63,13 +63,10 @@ public class StringOps {
     public static String camelCase (String string) {
         string = lowerCase(string);
         String out = "";
-
+        string = deleteSpace(string);
         for (int i = 0; i < string.length(); i++){
             char n = string.charAt(i);
-            if (n == ' '){
-                continue;
-            }
-            
+ 
             if (i < string.length()-1 && n==' ' && i != 0){
                 char m = string.charAt(i+1);
                 m = (char) (m-32);
@@ -82,6 +79,36 @@ public class StringOps {
         }
     }
         return out;
+    }
+
+    public static String deleteSpace(String string){
+        int counter = 0;
+        while(string.charAt(counter)==' '){
+            counter++;
+        }
+        return string.substring(counter);
+    }
+
+    public static String camelCase1 (String string) {
+        string = deleteSpace(string);
+        string = lowerCase(string);
+        String out = "";
+            boolean isSpace = false; 
+
+        for (int i = 0; i < string.length(); i++){
+            char n = string.charAt(i);
+            if(n==' '){
+                isSpace = true;
+            }
+            if (n!=' '){
+                if(isSpace&&i!=0){
+                    out += (char)(n-32);
+                    isSpace = false;
+                }else{
+                    out+=n;
+                }
+            }}
+            return out;
     }
 
     public static int[] allIndexOf (String string, char chr) {
