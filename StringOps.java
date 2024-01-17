@@ -88,27 +88,6 @@ System.out.println(camelCase("  test me now "));
         return string.substring(counter);
     }
 
-    public static String camelCase1 (String string) {
-        string = deleteSpace(string);
-        string = lowerCase(string);
-        String out = "";
-            boolean isSpace = false; 
-
-        for (int i = 0; i < string.length(); i++){
-            char n = string.charAt(i);
-            if(n==' '){
-                isSpace = true;
-            }
-            if (n!=' '){
-                if(isSpace&&i!=0){
-                    out += (char)(n-32);
-                    isSpace = false;
-                }else{
-                    out+=n;
-                }
-            }}
-            return out;
-    }
 
     public static int[] allIndexOf (String string, char chr) {
         int count = 0;
