@@ -58,6 +58,13 @@ System.out.println(camelCase(" tWo wordS "));
         return out;
     }
 
+    public static String deleteSpace(String string){
+        int counter = 0;
+        while(string.charAt(counter)==' '){
+            counter++;
+        }
+        return string.substring(counter);
+    }
 
     public static String camelCase (String string) {
         string = lowerCase(string);
@@ -80,13 +87,6 @@ System.out.println(camelCase(" tWo wordS "));
         return out;
     }
 
-    public static String deleteSpace(String string){
-        int counter = 0;
-        while(string.charAt(counter)==' '){
-            counter++;
-        }
-        return string.substring(counter);
-    }
 
 
     public static int[] allIndexOf (String string, char chr) {
