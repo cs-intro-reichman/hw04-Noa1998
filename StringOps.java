@@ -24,7 +24,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-
+System.out.println(camelCase("  test me now "));
     }
 
     public static String capVowelsLowRest (String string) {
@@ -59,15 +59,7 @@ public class StringOps {
     }
 
 
-    public static String deleteSpace(String string){
-        int counter = 0;
-        while(string.charAt(counter)==' '){
-            counter++;
-        }
-        return string.substring(counter);
-    }
-
-    public static String camelCase1 (String string) {
+    public static String camelCase (String string) {
         string = lowerCase(string);
         String out = "";
         string = deleteSpace(string);
@@ -88,7 +80,15 @@ public class StringOps {
         return out;
     }
 
-    public static String camelCase (String string) {
+    public static String deleteSpace(String string){
+        int counter = 0;
+        while(string.charAt(counter)==' '){
+            counter++;
+        }
+        return string.substring(counter);
+    }
+
+    public static String camelCase1 (String string) {
         string = deleteSpace(string);
         string = lowerCase(string);
         String out = "";
