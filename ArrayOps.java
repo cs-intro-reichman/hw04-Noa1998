@@ -25,7 +25,7 @@ public class ArrayOps {
      * @return
      */
     public static int secondMaxValue(int [] array) {
-        int FirstMax = 1;
+        int FirstMax = 1; // #feedback - variable names should start with lower case. i.e. firstMax.
         int SecondMax = 0;
         int temp = 0;
     
@@ -57,6 +57,7 @@ public class ArrayOps {
     
     return true;
     }
+    // #feedback - the third input (index) is not needed, you can just use array.length.
     public static boolean contains(int [] array, int value, int index) {
         for (int i = 0; i < index; i++){
             if(array[i] == value){
