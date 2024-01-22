@@ -69,7 +69,8 @@ System.out.println(camelCase("  test me now "));
             if (i < string.length()-1 && n==' ' && i != 0){
                 char m = string.charAt(i+1);
                 m = (char) (m-32);
-                out += m;  
+                out += m;
+                // #feedback - it is sometimes confusing to increase the index inside a for loop, consider having while loops in these cases.
                 i++;
 
                 } else {
@@ -88,6 +89,7 @@ System.out.println(camelCase("  test me now "));
         return string.substring(counter);
     }
 
+    // #feedback - this function is not used if I understand correctly. Please remove these next time.
     public static String camelCase1 (String string) {
         string = deleteSpace(string);
         string = lowerCase(string);
@@ -113,7 +115,7 @@ System.out.println(camelCase("  test me now "));
     public static int[] allIndexOf (String string, char chr) {
         int count = 0;
         for (int i = 0; i < string.length(); i++){
-            char n = string.charAt(i);
+            char n = string.charAt(i); // #feedback - please give variables names that are more indicative, such as currentChar.
             if (chr == n){
                 count++;
             }
